@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.keys.dao.KeysAccountMapper">
+	<resultMap id="BaseResultMap" type="com.smart.keys.model.po.KeysAccount">
+		<id column="id" property="id" jdbcType="INTEGER" />
+		<result column="key_name" property="keyName" jdbcType="VARCHAR" />
+		<result column="key_code" property="keyCode" jdbcType="VARCHAR" />
+		<result column="key_status" property="keyStatus" jdbcType="INTEGER" />
+		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+		<result column="pass_word" property="passWord" jdbcType="VARCHAR" />
+		<result column="user_id" property="userId" jdbcType="INTEGER" />
+		<result column="key_desc" property="keyDesc" jdbcType="VARCHAR" />
+		<result column="login_address" property="loginAddress" jdbcType="VARCHAR" />
+		<result column="sort" property="sort" jdbcType="INTEGER" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, key_name, key_code, key_status, user_name, pass_word, user_id, key_desc,
+		login_address, sort, create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+			<include refid="Base_Column_List" />
+		from T_KEYS_ACCOUNT
+		where id = #{id,jdbcType=INTEGER}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+		delete from T_KEYS_ACCOUNT
+		where id = #{id,jdbcType=INTEGER}
+	</delete>
+	<insert id="insert" parameterType="com.smart.keys.model.po.KeysAccount">
+		insert into T_KEYS_ACCOUNT (id, key_name, key_code,
+		key_status, user_name, pass_word, user_id,
+		key_desc, login_address, sort,
+		create_time, update_time)
+		values (#{id,jdbcType=INTEGER}, #{keyName,jdbcType=VARCHAR}, #{keyCode,jdbcType=VARCHAR},
+		#{keyStatus,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR}, #{passWord,jdbcType=VARCHAR},
+		#{userId,jdbcType=INTEGER}, #{keyDesc,jdbcType=VARCHAR}, #{loginAddress,jdbcType=VARCHAR},
+		#{sort,jdbcType=INTEGER},
+		#{createTime,jdbcType=TIMESTAMP}, #{updateTime,jdbcType=TIMESTAMP})
+	</insert>
+	<insert id="insertSelective" parameterType="com.smart.keys.model.po.KeysAccount">
+		insert into T_KEYS_ACCOUNT
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="keyName != null">
+				key_name,
+			</if>
+			<if test="keyCode != null">
+				key_code,
+			</if>
+			<if test="keyStatus != null">
+				key_status,
+			</if>
+			<if test="userName != null">
+				user_name,
+			</if>
+			<if test="passWord != null">
+				pass_word,
+			</if>
+			<if test="userId != null">
+				user_id,
+			</if>
+			<if test="keyDesc != null">
+				key_desc,
+			</if>
+			<if test="loginAddress != null">
+				login_address,
+			</if>
+			<if test="sort != null">
+				sort,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=INTEGER},
+			</if>
+			<if test="keyName != null">
+				#{keyName,jdbcType=VARCHAR},
+			</if>
+			<if test="keyCode != null">
+				#{keyCode,jdbcType=VARCHAR},
+			</if>
+			<if test="keyStatus != null">
+				#{keyStatus,jdbcType=INTEGER},
+			</if>
+			<if test="userName != null">
+				#{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="passWord != null">
+				#{passWord,jdbcType=VARCHAR},
+			</if>
+			<if test="userId != null">
+				#{userId,jdbcType=INTEGER},
+			</if>
+			<if test="keyDesc != null">
+				#{keyDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="loginAddress != null">
+				#{loginAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="sort != null">
+				#{sort,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.smart.keys.model.po.KeysAccount">
+		update T_KEYS_ACCOUNT
+		<set>
+			<if test="keyName != null">
+				key_name = #{keyName,jdbcType=VARCHAR},
+			</if>
+			<if test="keyCode != null">
+				key_code = #{keyCode,jdbcType=VARCHAR},
+			</if>
+			<if test="keyStatus != null">
+				key_status = #{keyStatus,jdbcType=INTEGER},
+			</if>
+			<if test="userName != null">
+				user_name = #{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="passWord != null">
+				pass_word = #{passWord,jdbcType=VARCHAR},
+			</if>
+			<if test="userId != null">
+				user_id = #{userId,jdbcType=INTEGER},
+			</if>
+			<if test="keyDesc != null">
+				key_desc = #{keyDesc,jdbcType=VARCHAR},
+			</if>
+			<if test="loginAddress != null">
+				login_address = #{loginAddress,jdbcType=VARCHAR},
+			</if>
+			<if test="sort != null">
+				sort = #{sort,jdbcType=INTEGER},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.smart.keys.model.po.KeysAccount">
+		update T_KEYS_ACCOUNT
+		set key_name = #{keyName,jdbcType=VARCHAR},
+		key_code = #{keyCode,jdbcType=VARCHAR},
+		key_status = #{keyStatus,jdbcType=INTEGER},
+		user_name = #{userName,jdbcType=VARCHAR},
+		pass_word = #{passWord,jdbcType=VARCHAR},
+		user_id = #{userId,jdbcType=INTEGER},
+		key_desc = #{keyDesc,jdbcType=VARCHAR},
+		login_address = #{loginAddress,jdbcType=VARCHAR},
+		sort = #{sort,jdbcType=INTEGER},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=INTEGER}
+	</update>
+	
+	<select id="selectKeysAccountByUserid" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+			<include refid="Base_Column_List" />
+		from 
+			T_KEYS_ACCOUNT
+		where 
+			user_id = #{userId,jdbcType=INTEGER}
+	</select>
+	
+	<select id="selectKeysAccountByUserKeyWord" resultMap="BaseResultMap">
+		select
+			<include refid="Base_Column_List" />
+		from 
+			T_KEYS_ACCOUNT
+		where 
+			user_id = #{userId,jdbcType=INTEGER}
+			and 
+			instr(key_name, #{keyWord,jdbcType=VARCHAR})
+	</select>
+</mapper>

@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.smart.keys.dao.AccountUserMapper">
+	<resultMap id="BaseResultMap" type="com.smart.keys.model.po.AccountUser">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="wechat_open_id" property="wechatOpenId" jdbcType="VARCHAR" />
+		<result column="wechat_union_id" property="wechatUnionId" jdbcType="VARCHAR" />
+		<result column="wechat_nickname" property="wechatNickname" jdbcType="VARCHAR" />
+		<result column="wechat_sex" property="wechatSex" jdbcType="VARCHAR" />
+		<result column="wechat_country" property="wechatCountry" jdbcType="VARCHAR" />
+		<result column="wechat_province" property="wechatProvince" jdbcType="VARCHAR" />
+		<result column="wechat_city" property="wechatCity" jdbcType="VARCHAR" />
+		<result column="wechat_imageurl" property="wechatImageurl" jdbcType="VARCHAR" />
+		<result column="user_status" property="userStatus" jdbcType="INTEGER" />
+		<result column="user_type" property="userType" jdbcType="INTEGER" />
+		<result column="user_name" property="userName" jdbcType="VARCHAR" />
+		<result column="user_mobile" property="userMobile" jdbcType="VARCHAR" />
+		<result column="gesture_password" property="gesturePassword" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	<sql id="Base_Column_List">
+		id, wechat_open_id, wechat_union_id, wechat_nickname, wechat_sex, wechat_country,
+		wechat_province, wechat_city, wechat_imageurl, user_status, user_type, user_name,
+		user_mobile, gesture_password, create_time, update_time
+	</sql>
+	<select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+		<include refid="Base_Column_List" />
+		from T_ACCOUNT_USER
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from T_ACCOUNT_USER
+		where id = #{id,jdbcType=BIGINT}
+	</delete>
+	<insert id="insert" parameterType="com.smart.keys.model.po.AccountUser">
+		insert into T_ACCOUNT_USER (id, wechat_open_id, wechat_union_id,
+		wechat_nickname, wechat_sex, wechat_country,
+		wechat_province, wechat_city, wechat_imageurl,
+		user_status, user_type, user_name,
+		user_mobile, gesture_password, create_time, update_time
+		)
+		values (#{id,jdbcType=BIGINT}, #{wechatOpenId,jdbcType=VARCHAR}, #{wechatUnionId,jdbcType=VARCHAR},
+		#{wechatNickname,jdbcType=VARCHAR}, #{wechatSex,jdbcType=VARCHAR}, #{wechatCountry,jdbcType=VARCHAR},
+		#{wechatProvince,jdbcType=VARCHAR}, #{wechatCity,jdbcType=VARCHAR}, #{wechatImageurl,jdbcType=VARCHAR},
+		#{userStatus,jdbcType=INTEGER}, #{userType,jdbcType=INTEGER}, #{userName,jdbcType=VARCHAR},
+		#{userMobile,jdbcType=VARCHAR}, #{gesturePassword,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+		#{updateTime,jdbcType=TIMESTAMP}
+		)
+	</insert>
+	<insert id="insertSelective" parameterType="com.smart.keys.model.po.AccountUser">
+		insert into T_ACCOUNT_USER
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				id,
+			</if>
+			<if test="wechatOpenId != null">
+				wechat_open_id,
+			</if>
+			<if test="wechatUnionId != null">
+				wechat_union_id,
+			</if>
+			<if test="wechatNickname != null">
+				wechat_nickname,
+			</if>
+			<if test="wechatSex != null">
+				wechat_sex,
+			</if>
+			<if test="wechatCountry != null">
+				wechat_country,
+			</if>
+			<if test="wechatProvince != null">
+				wechat_province,
+			</if>
+			<if test="wechatCity != null">
+				wechat_city,
+			</if>
+			<if test="wechatImageurl != null">
+				wechat_imageurl,
+			</if>
+			<if test="userStatus != null">
+				user_status,
+			</if>
+			<if test="userType != null">
+				user_type,
+			</if>
+			<if test="userName != null">
+				user_name,
+			</if>
+			<if test="userMobile != null">
+				user_mobile,
+			</if>
+			<if test="gesturePassword != null">
+				gesture_password,
+			</if>
+			<if test="createTime != null">
+				create_time,
+			</if>
+			<if test="updateTime != null">
+				update_time,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="id != null">
+				#{id,jdbcType=BIGINT},
+			</if>
+			<if test="wechatOpenId != null">
+				#{wechatOpenId,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatUnionId != null">
+				#{wechatUnionId,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatNickname != null">
+				#{wechatNickname,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatSex != null">
+				#{wechatSex,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatCountry != null">
+				#{wechatCountry,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatProvince != null">
+				#{wechatProvince,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatCity != null">
+				#{wechatCity,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatImageurl != null">
+				#{wechatImageurl,jdbcType=VARCHAR},
+			</if>
+			<if test="userStatus != null">
+				#{userStatus,jdbcType=INTEGER},
+			</if>
+			<if test="userType != null">
+				#{userType,jdbcType=INTEGER},
+			</if>
+			<if test="userName != null">
+				#{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="userMobile != null">
+				#{userMobile,jdbcType=VARCHAR},
+			</if>
+			<if test="gesturePassword != null">
+				#{gesturePassword,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				#{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				#{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+	<update id="updateByPrimaryKeySelective" parameterType="com.smart.keys.model.po.AccountUser">
+		update T_ACCOUNT_USER
+		<set>
+			<if test="wechatOpenId != null">
+				wechat_open_id = #{wechatOpenId,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatUnionId != null">
+				wechat_union_id = #{wechatUnionId,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatNickname != null">
+				wechat_nickname = #{wechatNickname,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatSex != null">
+				wechat_sex = #{wechatSex,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatCountry != null">
+				wechat_country = #{wechatCountry,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatProvince != null">
+				wechat_province = #{wechatProvince,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatCity != null">
+				wechat_city = #{wechatCity,jdbcType=VARCHAR},
+			</if>
+			<if test="wechatImageurl != null">
+				wechat_imageurl = #{wechatImageurl,jdbcType=VARCHAR},
+			</if>
+			<if test="userStatus != null">
+				user_status = #{userStatus,jdbcType=INTEGER},
+			</if>
+			<if test="userType != null">
+				user_type = #{userType,jdbcType=INTEGER},
+			</if>
+			<if test="userName != null">
+				user_name = #{userName,jdbcType=VARCHAR},
+			</if>
+			<if test="userMobile != null">
+				user_mobile = #{userMobile,jdbcType=VARCHAR},
+			</if>
+			<if test="gesturePassword != null">
+				gesture_password = #{gesturePassword,jdbcType=VARCHAR},
+			</if>
+			<if test="createTime != null">
+				create_time = #{createTime,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateTime != null">
+				update_time = #{updateTime,jdbcType=TIMESTAMP},
+			</if>
+		</set>
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	<update id="updateByPrimaryKey" parameterType="com.smart.keys.model.po.AccountUser">
+		update T_ACCOUNT_USER
+		set wechat_open_id = #{wechatOpenId,jdbcType=VARCHAR},
+		wechat_union_id = #{wechatUnionId,jdbcType=VARCHAR},
+		wechat_nickname = #{wechatNickname,jdbcType=VARCHAR},
+		wechat_sex = #{wechatSex,jdbcType=VARCHAR},
+		wechat_country = #{wechatCountry,jdbcType=VARCHAR},
+		wechat_province = #{wechatProvince,jdbcType=VARCHAR},
+		wechat_city = #{wechatCity,jdbcType=VARCHAR},
+		wechat_imageurl = #{wechatImageurl,jdbcType=VARCHAR},
+		user_status = #{userStatus,jdbcType=INTEGER},
+		user_type = #{userType,jdbcType=INTEGER},
+		user_name = #{userName,jdbcType=VARCHAR},
+		user_mobile = #{userMobile,jdbcType=VARCHAR},
+		gesture_password = #{gesturePassword,jdbcType=VARCHAR},
+		create_time = #{createTime,jdbcType=TIMESTAMP},
+		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where id = #{id,jdbcType=BIGINT}
+	</update>
+	
+	<select id="findUserByOpenId" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+			<include refid="Base_Column_List" />
+		from 
+			T_ACCOUNT_USER
+		where 
+			wechat_open_id = #{wechatOpenId,jdbcType=VARCHAR}
+	</select>
+</mapper>

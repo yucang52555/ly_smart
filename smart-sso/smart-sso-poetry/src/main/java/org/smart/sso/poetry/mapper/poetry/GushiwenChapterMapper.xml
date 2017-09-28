@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="org.smart.sso.poetry.dao.poetry.GushiwenChapterMapper">
+	<resultMap id="BaseResultMap" type="org.smart.sso.poetry.model.po.poetry.Chapter">
+		<id column="id" property="id" jdbcType="BIGINT" />
+		<result column="charpter_name" property="charpterName" jdbcType="VARCHAR" />
+		<result column="charpter_url" property="charpterUrl" jdbcType="VARCHAR" />
+		<result column="book_id" property="bookId" jdbcType="BIGINT" />
+		<result column="charpter_class" property="charpterClass" jdbcType="VARCHAR" />
+		<result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+	</resultMap>
+	
+	<resultMap id="ResultMapWithBLOBs" type="org.smart.sso.poetry.model.po.poetry.ChapterWithBLOBs" extends="BaseResultMap">
+		<result column="charpter_content" property="charpterContent" jdbcType="LONGVARBINARY" />
+		<result column="translate_content" property="translateContent" jdbcType="LONGVARBINARY" />
+	</resultMap>
+	
+	<sql id="Base_Column_List">
+		id, charpter_name, charpter_url, book_id, charpter_class, create_time, update_time
+	</sql>
+	
+	<sql id="Blob_Column_List">
+		charpter_content, translate_content
+	</sql>
+	
+	<select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Long">
+		select
+			<include refid="Base_Column_List" />
+			,
+			<include refid="Blob_Column_List" />
+		from 
+			T_GUSHIWEN_CHAPTER_CONTENT
+		where id = #{id,jdbcType=BIGINT}
+	</select>
+	
+	<delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+		delete from T_GUSHIWEN_CHAPTER where id = #{id,jdbcType=BIGINT}
+	</delete>
+	
+	<update id="updateByPrimaryKey" parameterType="org.smart.sso.poetry.model.po.poetry.Chapter">
+		update 
+			T_GUSHIWEN_CHAPTER
+		set 
+			charpter_name = #{charpterName,jdbcType=VARCHAR},
+			charpter_url = #{charpterUrl,jdbcType=VARCHAR},
+			book_id = #{bookId,jdbcType=BIGINT},
+			charpter_class = #{charpterClass,jdbcType=VARCHAR},
+			create_time = #{createTime,jdbcType=TIMESTAMP},
+			update_time = #{updateTime,jdbcType=TIMESTAMP}
+		where 
+			id = #{id,jdbcType=BIGINT}
+	</update>
+	
+	<select id="selectByBookId" resultMap="BaseResultMap" parameterType="java.lang.Long">
+		select
+			<include refid="Base_Column_List" />
+		from 
+			T_GUSHIWEN_CHAPTER
+		where book_id = #{bookId,jdbcType=BIGINT}
+	</select>
+	
+</mapper>
