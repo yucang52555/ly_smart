@@ -13,7 +13,7 @@
 
 	<!-- 扫描Mapper -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="org.smart.sso.poetry.dao" />
+		<property name="basePackage" value="com.smart.position.dao" />
 	</bean>
 
 	<!-- 引入Mybatis基础配置 -->
@@ -23,9 +23,9 @@
 		<!--dataSource属性指定要用到的连接池 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- 配置model的alias,别名(即类名) -->
-		<property name="typeAliasesPackage" value="org.smart.sso.poetry.model.po" />
+		<property name="typeAliasesPackage" value="com.smart.position.model.po" />
 		<!-- 所有配置的aliasemapper文件 -->
-		<property name="mapperLocations" value="classpath*:org/smart/sso/poetry/mapper/*.xml" />
+		<property name="mapperLocations" value="classpath*:com/smart/position/mapper/*.xml" />
 		<!--分页插件 -->
 		<property name="plugins">
 			<ref bean="paginationInterceptor" />
