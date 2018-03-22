@@ -155,28 +155,28 @@
 	<update id="updateByPrimaryKeySelective" parameterType="com.smart.keys.model.po.AccountUser">
 		update T_ACCOUNT_USER
 		<set>
-			<if test="wechatOpenId != null">
+			<if test="wechatOpenId != null and not(wechatOpenId.equals(''))">
 				wechat_open_id = #{wechatOpenId,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatUnionId != null">
+			<if test="wechatUnionId != null and not(wechatUnionId.equals(''))">
 				wechat_union_id = #{wechatUnionId,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatNickname != null">
+			<if test="wechatNickname != null and not(wechatNickname.equals(''))">
 				wechat_nickname = #{wechatNickname,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatSex != null">
+			<if test="wechatSex != null and not(wechatSex.equals(''))">
 				wechat_sex = #{wechatSex,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatCountry != null">
+			<if test="wechatCountry != null and not(wechatCountry.equals(''))">
 				wechat_country = #{wechatCountry,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatProvince != null">
+			<if test="wechatProvince != null and not(wechatProvince.equals(''))">
 				wechat_province = #{wechatProvince,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatCity != null">
+			<if test="wechatCity != null and not(wechatCity.equals(''))">
 				wechat_city = #{wechatCity,jdbcType=VARCHAR},
 			</if>
-			<if test="wechatImageurl != null">
+			<if test="wechatImageurl != null and not(wechatImageurl.equals(''))">
 				wechat_imageurl = #{wechatImageurl,jdbcType=VARCHAR},
 			</if>
 			<if test="userStatus != null">
@@ -185,13 +185,13 @@
 			<if test="userType != null">
 				user_type = #{userType,jdbcType=INTEGER},
 			</if>
-			<if test="userName != null">
+			<if test="userName != null and not(userName.equals(''))">
 				user_name = #{userName,jdbcType=VARCHAR},
 			</if>
-			<if test="userMobile != null">
+			<if test="userMobile != null and not(userMobile.equals(''))">
 				user_mobile = #{userMobile,jdbcType=VARCHAR},
 			</if>
-			<if test="gesturePassword != null">
+			<if test="gesturePassword != null and not(gesturePassword.equals(''))">
 				gesture_password = #{gesturePassword,jdbcType=VARCHAR},
 			</if>
 			<if test="createTime != null">

@@ -122,28 +122,28 @@
 	<update id="updateByPrimaryKeySelective" parameterType="com.smart.keys.model.po.KeysAccount">
 		update T_KEYS_ACCOUNT
 		<set>
-			<if test="keyName != null">
+			<if test="keyName != null and not(keyName.equals(''))">
 				key_name = #{keyName,jdbcType=VARCHAR},
 			</if>
-			<if test="keyCode != null">
+			<if test="keyCode != null and not(keyCode.equals(''))">
 				key_code = #{keyCode,jdbcType=VARCHAR},
 			</if>
 			<if test="keyStatus != null">
 				key_status = #{keyStatus,jdbcType=INTEGER},
 			</if>
-			<if test="userName != null">
+			<if test="userName != null and not(userName.equals(''))">
 				user_name = #{userName,jdbcType=VARCHAR},
 			</if>
-			<if test="passWord != null">
+			<if test="passWord != null and not(passWord.equals(''))">
 				pass_word = #{passWord,jdbcType=VARCHAR},
 			</if>
 			<if test="userId != null">
 				user_id = #{userId,jdbcType=INTEGER},
 			</if>
-			<if test="keyDesc != null">
+			<if test="keyDesc != null and not(keyDesc.equals(''))">
 				key_desc = #{keyDesc,jdbcType=VARCHAR},
 			</if>
-			<if test="loginAddress != null">
+			<if test="loginAddress != null and not(loginAddress.equals(''))">
 				login_address = #{loginAddress,jdbcType=VARCHAR},
 			</if>
 			<if test="sort != null">
