@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smart-sso-position:war">
+    <output-path>$PROJECT_DIR$/smart-sso/smart-sso-position/target</output-path>
+    <root id="archive" name="/smart-sso-position.war">
+      <element id="artifact" artifact-name="smart-sso-position:war exploded" />
+    </root>
+  </artifact>
+</component>

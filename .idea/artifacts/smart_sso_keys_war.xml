@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="smart-sso-keys:war">
+    <output-path>$PROJECT_DIR$/smart-sso/smart-sso-keys/target</output-path>
+    <root id="archive" name="/smart-sso-keys.war">
+      <element id="artifact" artifact-name="smart-sso-keys:war exploded" />
+    </root>
+  </artifact>
+</component>

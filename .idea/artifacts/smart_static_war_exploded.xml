@@ -1,0 +1,16 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="smart-static:war exploded">
+    <output-path>$PROJECT_DIR$/smart-static/target/smart-static-1.0.0</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="smart-static" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/smart-static/target/smart-static-1.0.0/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="smart-static/web/Web" />
+    </root>
+  </artifact>
+</component>
