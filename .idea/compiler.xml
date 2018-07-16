@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <resourceExtensions />
+    <wildcardResourcePatterns>
+      <entry name="!?*.java" />
+      <entry name="!?*.form" />
+      <entry name="!?*.class" />
+      <entry name="!?*.groovy" />
+      <entry name="!?*.scala" />
+      <entry name="!?*.flex" />
+      <entry name="!?*.kt" />
+      <entry name="!?*.clj" />
+      <entry name="!?*.aj" />
+    </wildcardResourcePatterns>
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="false">
+        <processorPath useClasspath="true" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="smart-mvc" />
+        <module name="smart-sso-client" />
+        <module name="smart-sso-demo" />
+        <module name="smart-sso-keys" />
+        <module name="smart-sso-keysadmin" />
+        <module name="smart-sso-poetry" />
+        <module name="smart-sso-position" />
+        <module name="smart-sso-product" />
+        <module name="smart-sso-server" />
+        <module name="smart-static" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="smart" target="1.7" />
+      <module name="smart-mvc" target="1.7" />
+      <module name="smart-sso" target="1.7" />
+      <module name="smart-sso-client" target="1.7" />
+      <module name="smart-sso-demo" target="1.7" />
+      <module name="smart-sso-keys" target="1.7" />
+      <module name="smart-sso-keysadmin" target="1.7" />
+      <module name="smart-sso-poetry" target="1.7" />
+      <module name="smart-sso-position" target="1.7" />
+      <module name="smart-sso-product" target="1.7" />
+      <module name="smart-sso-server" target="1.7" />
+      <module name="smart-static" target="1.7" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
