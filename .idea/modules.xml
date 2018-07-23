@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/smart-sso/smart-sso-demo/src/main/main.iml" filepath="$PROJECT_DIR$/smart-sso/smart-sso-demo/src/main/main.iml" />
       <module fileurl="file://$PROJECT_DIR$/smart.iml" filepath="$PROJECT_DIR$/smart.iml" />
       <module fileurl="file://$PROJECT_DIR$/smart-mvc/smart-mvc.iml" filepath="$PROJECT_DIR$/smart-mvc/smart-mvc.iml" />
-      <module fileurl="file://$PROJECT_DIR$/smart-sso/smart-sso.iml" filepath="$PROJECT_DIR$/smart-sso/smart-sso.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart-open/smart-open.iml" filepath="$PROJECT_DIR$/smart-open/smart-open.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart-open/smart-open-generate/smart-open-generate.iml" filepath="$PROJECT_DIR$/smart-open/smart-open-generate/smart-open-generate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/smart-open/smart-open-message/smart-open-message.iml" filepath="$PROJECT_DIR$/smart-open/smart-open-message/smart-open-message.iml" />
       <module fileurl="file://$PROJECT_DIR$/smart-sso/smart-sso-client/smart-sso-client.iml" filepath="$PROJECT_DIR$/smart-sso/smart-sso-client/smart-sso-client.iml" />
       <module fileurl="file://$PROJECT_DIR$/smart-sso/smart-sso-demo/smart-sso-demo.iml" filepath="$PROJECT_DIR$/smart-sso/smart-sso-demo/smart-sso-demo.iml" />
       <module fileurl="file://$PROJECT_DIR$/smart-sso/smart-sso-keys/smart-sso-keys.iml" filepath="$PROJECT_DIR$/smart-sso/smart-sso-keys/smart-sso-keys.iml" />

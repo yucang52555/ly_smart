@@ -4,6 +4,12 @@
 	<groupId>com.smart</groupId>
 	<artifactId>smart</artifactId>
 	<version>1.0.0</version>
+	<dependencies>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+	</dependencies>
 	<packaging>pom</packaging>
 	<name>${project.artifactId}</name>
 	
@@ -14,9 +20,10 @@
 		<module>smart-sso</module>
 		<!-- 前端公用脚本和样式  -->
 		<module>smart-static</module>
-	</modules>
+        <module>smart-open</module>
+    </modules>
 	
-	<profiles>
+	<!--<profiles>
 		<profile>
 			<id>dev</id>
 			<properties>
@@ -36,7 +43,7 @@
 				<log.url>${catalina.home}/logs</log.url>
 			</properties>
 		</profile>
-	</profiles>
+	</profiles>-->
 	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -23,6 +23,8 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="smart-mvc" />
+        <module name="smart-open-generate" />
+        <module name="smart-open-message" />
         <module name="smart-sso-client" />
         <module name="smart-sso-demo" />
         <module name="smart-sso-keys" />
@@ -37,7 +39,11 @@
     <bytecodeTargetLevel>
       <module name="smart" target="1.7" />
       <module name="smart-mvc" target="1.7" />
+      <module name="smart-open" target="1.7" />
+      <module name="smart-open-generate" target="1.7" />
+      <module name="smart-open-message" target="1.7" />
       <module name="smart-sso" target="1.7" />
+      <module name="smart-sso-blog" target="1.5" />
       <module name="smart-sso-client" target="1.7" />
       <module name="smart-sso-demo" target="1.7" />
       <module name="smart-sso-keys" target="1.7" />

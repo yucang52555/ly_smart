@@ -28,5 +28,6 @@
     	<module>smart-sso-position</module>
     	<module>smart-sso-poetry</module>
     	<module>smart-sso-keysadmin</module>
-  </modules>
+		<module>smart-sso-blog</module>
+	</modules>
 </project>
