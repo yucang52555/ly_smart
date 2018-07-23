@@ -16,11 +16,12 @@
 	<modules>
 		<!-- SpringMVC + Spring + Mybatis核心 -->
 		<module>smart-mvc</module>
+		<!-- 开放模块，不用登录  -->
+		<module>smart-open</module>
 		<!-- 单点登录权限系统 -->
 		<module>smart-sso</module>
 		<!-- 前端公用脚本和样式  -->
 		<module>smart-static</module>
-        <module>smart-open</module>
     </modules>
 	
 	<!--<profiles>
