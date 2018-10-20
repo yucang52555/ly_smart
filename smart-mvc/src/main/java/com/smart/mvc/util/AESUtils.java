@@ -41,7 +41,7 @@ public class AESUtils {
 	/**
 	 * 解密
 	 * @param key 密钥
-	 * @param value 解密数据
+	 * @param encrypted 解密数据
 	 * @return
 	 */
 	public static String decrypt(String key, String encrypted) {
@@ -65,5 +65,7 @@ public class AESUtils {
 		String key = "ruzimiencryptkey"; // 128 bit key
 		System.out.println(encrypt(key, "Hongfeng123456"));
 		System.out.println(decrypt(key, encrypt(key, "Hongfeng123456")));
+
+		System.out.println(decrypt(key, "yJMRNl7V+F+RPe0GCQGMEg=="));
 	}
 }
